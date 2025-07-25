@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero-section">
+    <h1 class="display-4 fw-bold mb-4">Welcome to Rocket League Hub</h1>
+    <p class="lead">The ultimate community for Rocket League players!</p>
+    {% if not user.is_authenticated %}
+        <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg">Join Now</a>
+    {% endif %}
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2>🎬</h2>
+                <h5>Share Clips</h5>
+                <p>Upload your best gameplay moments</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2>🏆</h2>
+                <h5>Join Tournaments</h5>
+                <p>Compete with other players</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2>💬</h2>
+                <h5>Forum Discussions</h5>
+                <p>Share tips and strategies</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2>⭐</h2>
+                <h5>Rate & Review</h5>
+                <p>Give feedback to other players</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
