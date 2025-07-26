@@ -5,72 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9190d6f8-9e26-4f03-bf90-4d4096dd3a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/rocket_league_hub.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clips/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clips/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clips/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clips/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clips/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clips/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clips/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/core/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forum/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forum/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forum/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forum/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forum/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forum/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forum/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocket_league_hub/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocket_league_hub/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocket_league_hub/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocket_league_hub/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocket_league_hub/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clips/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournaments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tournaments/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -81,6 +35,9 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="30MoxcJr1QAJ2tSbSPzB2Wno84r" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
@@ -95,11 +52,13 @@
     "RunOnceActivity.git.unshallow": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -145,7 +104,8 @@
       <option name="presentableId" value="Default" />
       <updated>1753447050255</updated>
       <workItem from="1753447051335" duration="152000" />
-      <workItem from="1753447717987" duration="2856000" />
+      <workItem from="1753447717987" duration="4347000" />
+      <workItem from="1753536759348" duration="828000" />
     </task>
     <servers />
   </component>
