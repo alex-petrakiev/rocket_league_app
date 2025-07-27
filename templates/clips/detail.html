@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ clip.title }} - Rocket League Hub{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2>{{ clip.title }}</h2>
+                <div class="mb-3">
+                    <span class="badge bg-primary">{{ clip.get_category_display }}</span>
+                    <small class="text-muted ms-2">{{ clip.views_count }} views • {{ clip.created_at|date:"M d, Y" }}</small>
+                </div>
+                
+                <!-- Video Player -->
+                <div class="mb-4">
+                    <video controls class="w-100" style="max-height: 400px;">
+                        <source src="{{ clip.video_file.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <p>{{ clip.description }}</p>
+                
+                <div class="d-flex align-items-center">
+                    <strong>by {{ clip.author.username }}</strong>
+                    <div class="ms-auto">
+                        {% if avg_rating > 0 %}
+                            <span class="text-warning">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= avg_rating %}⭐{% else %}☆{% endif %}
+                                {% endfor %}
+                            </span>
+                            <small class="text-muted">({{ total_ratings }} rating{{ total_ratings|pluralize }})</small>
+                        {% else %}
+                            <small class="text-muted">No ratings yet</small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        {% if user.is_authenticated %}
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5>Rate This Clip</h5>
+                </div>
+                <div class="card-body">
+                    {% if user_rating %}
+                        <p>Your rating: 
+                            <span class="text-warning">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= user_rating.score %}⭐{% else %}☆{% endif %}
+                                {% endfor %}
+                            </span>
+                        </p>
+                        <small class="text-muted">Click below to update your rating</small>
+                    {% endif %}
+                    
+                    <form method="post" action="{% url 'clips:rate' clip.pk %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="rating-select" class="form-label">Your Rating</label>
+                            <select name="score" id="rating-select" class="form-select">
+                                <option value="">Select rating...</option>
+                                {% for i in "12345" %}
+                                    <option value="{{ forloop.counter }}" {% if user_rating.score == forloop.counter %}selected{% endif %}>
+                                        {{ forloop.counter }} Star{{ forloop.counter|pluralize }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-sm">Submit Rating</button>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+        
+        <div class="card">
+            <div class="card-header">
+                <h5>Clip Info</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Category:</strong> {{ clip.get_category_display }}</p>
+                <p><strong>Uploaded:</strong> {{ clip.created_at|date:"M d, Y H:i" }}</p>
+                <p><strong>Views:</strong> {{ clip.views_count }}</p>
+                {% if total_ratings > 0 %}
+                    <p><strong>Average Rating:</strong> {{ avg_rating }}/5 ({{ total_ratings }} rating{{ total_ratings|pluralize }})</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Tournaments - Rocket League Hub{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>🏆 Tournaments</h2>
+    {% if user.is_authenticated %}
+        <a href="{% url 'tournaments:create' %}" class="btn btn-success">Create Tournament</a>
+    {% endif %}
+</div>
+
+<div class="row">
+    {% for tournament in tournaments %}
+        <div class="col-md-6 mb-4">
+            <div class="card tournament-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">{{ tournament.name }}</h5>
+                    <span class="badge bg-{% if tournament.status == 'upcoming' %}primary{% elif tournament.status == 'ongoing' %}warning{% else %}success{% endif %}">
+                        {{ tournament.get_status_display }}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ tournament.description|truncatewords:30 }}</p>
+                    
+                    <div class="row text-center mb-3">
+                        <div class="col-4">
+                            <strong>{{ tournament.participants_count }}</strong><br>
+                            <small class="text-muted">Participants</small>
+                        </div>
+                        <div class="col-4">
+                            <strong>{{ tournament.max_participants }}</strong><br>
+                            <small class="text-muted">Max Players</small>
+                        </div>
+                        <div class="col-4">
+                            {% if tournament.prize_pool %}
+                                <strong>{{ tournament.prize_pool }}</strong><br>
+                                <small class="text-muted">Prize Pool</small>
+                            {% else %}
+                                <strong>Glory</strong><br>
+                                <small class="text-muted">Prize</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <p class="mb-2">
+                        <strong>Start:</strong> {{ tournament.start_date|date:"M d, Y H:i" }}<br>
+                        <strong>Organizer:</strong> {{ tournament.organizer.username }}
+                    </p>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'tournaments:detail' tournament.pk %}" class="btn btn-primary btn-sm">View Details</a>
+                        {% if user.is_authenticated and tournament.status == 'upcoming' and not tournament.is_full %}
+                            {% if user not in tournament.participants.all %}
+                                <a href="{% url 'tournaments:join' tournament.pk %}" class="btn btn-success btn-sm">Join Tournament</a>
+                            {% else %}
+                                <span class="btn btn-outline-success btn-sm disabled">Already Joined</span>
+                            {% endif %}
+                        {% elif tournament.is_full %}
+                            <span class="btn btn-secondary btn-sm disabled">Full</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4>No tournaments available</h4>
+                    <p>Be the first to organize a tournament!</p>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'tournaments:create' %}" class="btn btn-success">Create Tournament</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

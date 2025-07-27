@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} - Forum{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Original Post -->
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h3 class="mb-0">{{ post.title }}</h3>
+                    {% if post.is_pinned %}
+                        <span class="badge bg-warning">📌 Pinned</span>
+                    {% endif %}
+                    <span class="badge bg-secondary">{{ post.get_category_display }}</span>
+                </div>
+                <small class="text-muted">{{ post.views_count }} views</small>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-start mb-3">
+                    <img src="{{ post.author.userprofile.avatar.url }}" alt="{{ post.author.username }}" class="rounded-circle me-3" width="50" height="50">
+                    <div>
+                        <strong>{{ post.author.username }}</strong><br>
+                        <small class="text-muted">{{ post.author.userprofile.current_rank|title }} Rank</small><br>
+                        <small class="text-muted">{{ post.created_at|date:"M d, Y H:i" }}</small>
+                    </div>
+                </div>
+                <div class="post-content">
+                    {{ post.content|linebreaks }}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comments Section -->
+        <div class="card">
+            <div class="card-header">
+                <h5>💬 Comments ({{ comments.count }})</h5>
+            </div>
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                    <!-- Add Comment Form -->
+                    <form method="post" action="{% url 'forum:add_comment' post.pk %}" class="mb-4">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="comment-content" class="form-label visually-hidden">Your Comment</label>
+                            <textarea id="comment-content" name="content" class="form-control" rows="3" placeholder="Add your comment..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Post Comment</button>
+                    </form>
+                    <hr>
+                {% endif %}
+                
+                <!-- Comments List -->
+                {% for comment in comments %}
+                    <div class="d-flex align-items-start mb-3 {% if not forloop.last %}border-bottom pb-3{% endif %}">
+                        <img src="{{ comment.author.userprofile.avatar.url }}" alt="{{ comment.author.username }}" class="rounded-circle me-3" width="40" height="40">
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <strong>{{ comment.author.username }}</strong>
+                                <small class="text-muted">{{ comment.created_at|date:"M d, Y H:i" }}</small>
+                            </div>
+                            <p class="mb-0">{{ comment.content|linebreaks }}</p>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="text-center text-muted">No comments yet. Be the first to comment!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

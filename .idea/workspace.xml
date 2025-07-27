@@ -5,12 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9190d6f8-9e26-4f03-bf90-4d4096dd3a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/avatars/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/avatars/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/clips/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/thumbnails/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clips/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clips/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clips/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clips/upload.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/core/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/core/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournaments/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournaments/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournaments/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournaments/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournaments/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clips/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournaments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tournaments/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clips/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clips/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournaments/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tournaments/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournaments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tournaments/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +76,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.rocket_league_hub.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -62,6 +93,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programs\DjangoProject\rocket_league_hub\media\avatars" />
+      <recent name="D:\Programs\DjangoProject\rocket_league_hub\templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="rocket_league_hub" type="Python.DjangoServer" factoryName="Django server">
       <module name="rocket_league_hub" />
@@ -70,6 +107,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="rocket_league_hub.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -105,7 +143,8 @@
       <updated>1753447050255</updated>
       <workItem from="1753447051335" duration="152000" />
       <workItem from="1753447717987" duration="4347000" />
-      <workItem from="1753536759348" duration="828000" />
+      <workItem from="1753536759348" duration="1340000" />
+      <workItem from="1753619121172" duration="2180000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create Tournament - Rocket League Hub{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-success">
+                <h3 class="card-title mb-0">🏆 Create New Tournament</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-success">Create Tournament</button>
+                    <a href="{% url 'tournaments:list' %}" class="btn btn-secondary">Cancel</a>
+                </form>
+                
+                <div class="alert alert-info mt-3">
+                    <strong>Tournament Guidelines:</strong>
+                    <ul class="mb-0 mt-2">
+                        <li>Choose appropriate dates and times for your participants</li>
+                        <li>Provide clear rules and format in the description</li>
+                        <li>Consider time zones when scheduling</li>
+                        <li>Be available to manage your tournament</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

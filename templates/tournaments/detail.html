@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ tournament.name }} - Tournaments{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">{{ tournament.name }}</h2>
+                <span class="badge bg-{% if tournament.status == 'upcoming' %}primary{% elif tournament.status == 'ongoing' %}warning{% else %}success{% endif %} fs-6">
+                    {{ tournament.get_status_display }}
+                </span>
+            </div>
+            <div class="card-body">
+                <p class="lead">{{ tournament.description }}</p>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h5>📅 Schedule</h5>
+                        <p><strong>Start:</strong> {{ tournament.start_date|date:"M d, Y H:i" }}</p>
+                        <p><strong>End:</strong> {{ tournament.end_date|date:"M d, Y H:i" }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>📊 Tournament Info</h5>
+                        <p><strong>Organizer:</strong> {{ tournament.organizer.username }}</p>
+                        <p><strong>Max Participants:</strong> {{ tournament.max_participants }}</p>
+                        {% if tournament.prize_pool %}
+                            <p><strong>Prize Pool:</strong> {{ tournament.prize_pool }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if user.is_authenticated and tournament.status == 'upcoming' %}
+                    <div class="text-center mb-4">
+                        {% if user not in tournament.participants.all and not tournament.is_full %}
+                            <a href="{% url 'tournaments:join' tournament.pk %}" class="btn btn-success btn-lg">Join Tournament</a>
+                        {% elif user in tournament.participants.all %}
+                            <div class="alert alert-success">
+                                <strong>✅ You're registered for this tournament!</strong>
+                            </div>
+                        {% elif tournament.is_full %}
+                            <div class="alert alert-warning">
+                                <strong>Tournament is full!</strong>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>👥 Participants ({{ tournament.participants_count }}/{{ tournament.max_participants }})</h5>
+            </div>
+            <div class="card-body">
+                {% if tournament.participants.all %}
+                    <div class="list-group list-group-flush">
+                        {% for participant in tournament.participants.all %}
+                            <div class="list-group-item d-flex align-items-center bg-transparent border-secondary">
+                                <div class="flex-shrink-0 me-3">
+                                    <img src="{{ participant.userprofile.avatar.url }}" alt="{{ participant.username }}" class="rounded-circle" width="30" height="30">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <strong>{{ participant.username }}</strong><br>
+                                    <small class="text-muted">{{ participant.userprofile.current_rank|title }} Rank</small>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted text-center">No participants yet. Be the first to join!</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6>Tournament Progress</h6>
+            </div>
+            <div class="card-body">
+                <div class="progress mb-2">
+                    <div class="progress-bar" role="progressbar"
+                         style="width: {{ tournament.participants_count|floatformat:0 }}{{ tournament.max_participants|floatformat:0 }}%"
+                         aria-valuenow="{{ tournament.participants_count }}"
+                         aria-valuemin="0"
+                         aria-valuemax="{{ tournament.max_participants }}">
+                    </div>
+                </div>
+                <small class="text-muted">
+                    {{ tournament.participants_count }} of {{ tournament.max_participants }} spots filled
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

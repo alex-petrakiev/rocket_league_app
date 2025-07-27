@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Rocket League Hub{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Hero Section -->
+        <div class="hero-section mb-5">
+            <h1 class="display-4 fw-bold mb-4">🚀 About Rocket League Hub</h1>
+            <p class="lead">The ultimate community platform for Rocket League players worldwide</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Mission Section -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title text-primary">🎯 Our Mission</h3>
+                <p class="card-text">
+                    Rocket League Hub was created to bring together players from all skill levels and regions. 
+                    Whether you're a Bronze rookie learning the basics or a Grand Champion perfecting advanced 
+                    mechanics, our platform provides the tools and community to enhance your Rocket League journey.
+                </p>
+                <p class="card-text">
+                    We believe that sharing gameplay moments, discussing strategies, and competing in tournaments 
+                    makes the game more enjoyable for everyone.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title text-primary">⚡ What We Offer</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2">🎬 <strong>Clip Sharing:</strong> Upload and share your best gameplay moments</li>
+                    <li class="mb-2">🏆 <strong>Tournaments:</strong> Join or organize competitive events</li>
+                    <li class="mb-2">💬 <strong>Community Forum:</strong> Discuss strategies, tips, and game updates</li>
+                    <li class="mb-2">⭐ <strong>Rating System:</strong> Rate and review community content</li>
+                    <li class="mb-2">👤 <strong>Player Profiles:</strong> Showcase your rank and achievements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <!-- Community Stats -->
+    <div class="col-md-4 mb-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2 class="text-primary">🎮</h2>
+                <h4>Growing Community</h4>
+                <p class="card-text">
+                    Join thousands of Rocket League enthusiasts sharing their passion for the game.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2 class="text-primary">🌍</h2>
+                <h4>Global Platform</h4>
+                <p class="card-text">
+                    Connect with players from around the world, regardless of platform or region.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h2 class="text-primary">🆓</h2>
+                <h4>Free to Use</h4>
+                <p class="card-text">
+                    All features are completely free. Just create an account and start participating!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h3 class="card-title mb-0 text-white">🚀 Getting Started</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 text-center mb-3">
+                        <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.2rem; font-weight: bold;">1</div>
+                        <h5 class="mt-2">Create Account</h5>
+                        <p class="small text-muted">Sign up with your email and create your gamer profile</p>
+                    </div>
+                    <div class="col-md-3 text-center mb-3">
+                        <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.2rem; font-weight: bold;">2</div>
+                        <h5 class="mt-2">Upload Content</h5>
+                        <p class="small text-muted">Share your best clips and join the community discussions</p>
+                    </div>
+                    <div class="col-md-3 text-center mb-3">
+                        <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.2rem; font-weight: bold;">3</div>
+                        <h5 class="mt-2">Join Tournaments</h5>
+                        <p class="small text-muted">Participate in community tournaments and compete with others</p>
+                    </div>
+                    <div class="col-md-3 text-center mb-3">
+                        <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.2rem; font-weight: bold;">4</div>
+                        <h5 class="mt-2">Build Reputation</h5>
+                        <p class="small text-muted">Earn ratings and build your reputation in the community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-body text-center">
+                <h3 class="mb-3">Ready to Join the Community?</h3>
+                <p class="mb-4">
+                    Whether you're looking to improve your skills, share epic moments, or compete in tournaments, 
+                    Rocket League Hub has everything you need to take your game to the next level.
+                </p>
+                {% if not user.is_authenticated %}
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg">
+                        🎮 Join Now - It's Free!
+                    </a>
+                    <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary btn-lg">
+                        🔑 Already a Member? Login
+                    </a>
+                </div>
+                {% else %}
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="{% url 'clips:list' %}" class="btn btn-primary btn-lg">
+                        🎬 Browse Clips
+                    </a>
+                    <a href="{% url 'tournaments:list' %}" class="btn btn-success btn-lg">
+                        🏆 View Tournaments
+                    </a>
+                    <a href="{% url 'forum:list' %}" class="btn btn-info btn-lg">
+                        💬 Join Discussions
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="text-center mb-4">❓ Frequently Asked Questions</h3>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Is Rocket League Hub official?</h5>
+                <p class="card-text small">
+                    No, we're a fan-created community platform. We're not affiliated with Psyonix or Epic Games, 
+                    but we're passionate fans just like you!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">What platforms are supported?</h5>
+                <p class="card-text small">
+                    Our community welcomes players from all platforms - PC, PlayStation, Xbox, and Nintendo Switch. 
+                    Cross-platform play means we're all one community!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">How do I upload clips?</h5>
+                <p class="card-text small">
+                    After creating an account, go to the Clips section and click "Upload Clip". 
+                    We support MP4, AVI, and MOV files up to 100MB.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Are tournaments free to join?</h5>
+                <p class="card-text small">
+                    Yes! All community tournaments are free to join. Some may have prizes sponsored by 
+                    community members, but participation is always free.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

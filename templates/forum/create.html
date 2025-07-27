@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create Post - Forum{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h3 class="card-title mb-0">💬 Create New Forum Post</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary">Create Post</button>
+                    <a href="{% url 'forum:list' %}" class="btn btn-secondary">Cancel</a>
+                </form>
+                
+                <div class="alert alert-info mt-3">
+                    <strong>Forum Guidelines:</strong>
+                    <ul class="mb-0 mt-2">
+                        <li>Be respectful and constructive in your discussions</li>
+                        <li>Use clear, descriptive titles for your posts</li>
+                        <li>Choose the appropriate category for your topic</li>
+                        <li>Search existing posts before creating new ones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
