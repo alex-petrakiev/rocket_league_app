@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 app_name = 'clips'
+
 urlpatterns = [
     path('', views.ClipListView.as_view(), name='list'),
     path('<int:pk>/', views.ClipDetailView.as_view(), name='detail'),

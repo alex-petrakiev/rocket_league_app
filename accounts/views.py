@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
+from .models import UserProfile
 
 
 def register_view(request):
@@ -20,9 +21,14 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
+    # Ensure user has a profile - create one if it doesn't exist
+    profile, created = UserProfile.objects.get_or_create(user=request.user)
+    if created:
+        messages.info(request, 'Profile created successfully!')
+
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
+        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=profile)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
@@ -31,7 +37,7 @@ def profile_view(request):
             return redirect('accounts:profile')
     else:
         user_form = UserUpdateForm(instance=request.user)
-        profile_form = ProfileUpdateForm(instance=request.user.userprofile)
+        profile_form = ProfileUpdateForm(instance=profile)
 
     context = {
         'user_form': user_form,

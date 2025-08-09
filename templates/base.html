@@ -12,29 +12,34 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand fw-bold" href="{% url 'core:home' %}">🚀 Rocket League Hub</a>
-
-            <div class="navbar-nav me-auto">
-                <a class="nav-link" href="{% url 'core:home' %}">Home</a>
-                <a class="nav-link" href="{% url 'clips:list' %}">Clips</a>
-                <a class="nav-link" href="{% url 'tournaments:list' %}">Tournaments</a>
-                <a class="nav-link" href="{% url 'forum:list' %}">Forum</a>
-            </div>
-
-            <div class="navbar-nav">
-                {% if user.is_authenticated %}
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            {{ user.username }}
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">Profile</a></li>
-                            <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a></li>
-                        </ul>
-                    </div>
-                {% else %}
-                    <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
-                    <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
-                {% endif %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link" href="{% url 'core:home' %}">Home</a>
+                    <a class="nav-link" href="{% url 'clips:list' %}">Clips</a>
+                    <a class="nav-link" href="{% url 'tournaments:list' %}">Tournaments</a>
+                    <a class="nav-link" href="{% url 'forum:list' %}">Forum</a>
+                    <a class="nav-link" href="{% url 'core:about' %}">About</a>
+                </div>
+                <div class="navbar-nav">
+                    {% if user.is_authenticated %}
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a></li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </nav>

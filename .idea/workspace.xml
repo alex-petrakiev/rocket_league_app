@@ -5,41 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9190d6f8-9e26-4f03-bf90-4d4096dd3a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/media/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/avatars/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/avatars/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/clips/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/thumbnails/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accounts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accounts/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accounts/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accounts/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clips/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clips/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clips/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clips/upload.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/core/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/core/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/forum/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/forum/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/forum/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/forum/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tournaments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tournaments/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tournaments/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tournaments/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tournaments/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clips/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clips/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forum/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clips/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/clips/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forum/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/forum/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournaments/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tournaments/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rocket_league_hub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rocket_league_hub/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rocket_league_hub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rocket_league_hub/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/core/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/core/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/core/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forum/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournaments/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tournaments/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tournaments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tournaments/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,26 +55,26 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.rocket_league_hub.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.rocket_league_hub.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Programs\DjangoProject\rocket_league_hub\media\avatars" />
@@ -144,7 +126,14 @@
       <workItem from="1753447051335" duration="152000" />
       <workItem from="1753447717987" duration="4347000" />
       <workItem from="1753536759348" duration="1340000" />
-      <workItem from="1753619121172" duration="2180000" />
+      <workItem from="1753619121172" duration="2749000" />
+      <workItem from="1754583418152" duration="80000" />
+      <workItem from="1754583524247" duration="20000" />
+      <workItem from="1754583816076" duration="6000" />
+      <workItem from="1754638379587" duration="703000" />
+      <workItem from="1754639106382" duration="7273000" />
+      <workItem from="1754723647291" duration="3069000" />
+      <workItem from="1754727814740" duration="4333000" />
     </task>
     <servers />
   </component>
