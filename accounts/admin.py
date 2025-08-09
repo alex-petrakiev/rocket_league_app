@@ -21,7 +21,6 @@ class CustomUserAdmin(UserAdmin):
     get_rank.short_description = 'Rank'
 
 
-# Re-register UserAdmin
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 

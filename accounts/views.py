@@ -21,7 +21,6 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
-    # Ensure user has a profile - create one if it doesn't exist
     profile, created = UserProfile.objects.get_or_create(user=request.user)
     if created:
         messages.info(request, 'Profile created successfully!')
